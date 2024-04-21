@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "macrocraft",
+  "version": "${version}",
+
+  "name": "MacroCraft",
+  "description": "MacroCraft is a revolutionary mod that empowers players to record, save, and execute complex sequences of actions with unparalleled ease.",
+  "authors": [],
+  "contact": {},
+
+  "license": "MIT",
+  "icon": "icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "dev.boxadactle.macrocraft.fabric.MacroCraftFabric"
+    ],
+    "modmenu": [
+      "dev.boxadactle.macrocraft.fabric.MacroCraftModmenu"
+    ]
+  },
+  "mixins": [
+    "macrocraft.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14",
+    "minecraft": ">=1.20"
+  }
+}
