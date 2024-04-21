@@ -44,7 +44,8 @@ public class MacroRecordHud {
 
         centeredInformation.render(graphics);
 
-        RenderingLayout controls = MacroControls.render(
+        RenderingLayout controls = MacroControls.createButtons(
+                graphics,
                 MacroState.IS_RECORDING,
                 MacroState.IS_PAUSED
         );

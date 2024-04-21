@@ -5,6 +5,7 @@ import dev.boxadactle.boxlib.layouts.RenderingLayout;
 import dev.boxadactle.boxlib.layouts.component.CenteredParagraphComponent;
 import dev.boxadactle.boxlib.layouts.layout.CenteredLayout;
 import dev.boxadactle.boxlib.layouts.layout.RowLayout;
+import dev.boxadactle.boxlib.math.geometry.Rect;
 import dev.boxadactle.boxlib.util.ClientUtils;
 import dev.boxadactle.boxlib.util.GuiUtils;
 import dev.boxadactle.boxlib.util.RenderUtils;
@@ -21,7 +22,9 @@ import net.minecraft.resources.ResourceLocation;
 
 public class MacroPlayHud {
 
-    public static final ResourceLocation PROGRESS_BAR = new ResourceLocation(MacroCraft.MOD_ID, "textures/gui/progress_bar.png");
+    public static final ResourceLocation PROGRESS_BAR = new ResourceLocation(MacroCraft.MOD_ID, "progress/progress_bar");
+
+    public static final ResourceLocation PROGRESS_BACKGROUND = new ResourceLocation(MacroCraft.MOD_ID, "progress/progress_empty");
 
     public static void render(GuiGraphics graphics) {
         // information at the top of the screen
@@ -56,7 +59,8 @@ public class MacroPlayHud {
         centeredInformation.render(graphics);
 
         // controls at the bottom of the screen
-        RenderingLayout controls = MacroControls.render(
+        RenderingLayout controls = MacroControls.createButtons(
+                graphics,
                 MacroState.LOADED_MACRO.isPlaying,
                 MacroState.LOADED_MACRO.isPaused
         );
@@ -69,12 +73,10 @@ public class MacroPlayHud {
         int buttonWidth = graphics.guiWidth() - 130;
         int buttonHeight = 12;
 
-        int textureY = 46;
-
         graphics.setColor(1.0f, 1.0f, 1.0f, 1.0f);
         RenderSystem.enableBlend();
         RenderSystem.enableDepthTest();
-        graphics.blitNineSliced(PROGRESS_BAR, buttonX, buttonY, buttonWidth, buttonHeight, 20, 4, 200, 20, 0, textureY);
+        graphics.blitSprite(PROGRESS_BACKGROUND, buttonX, buttonY, buttonWidth, buttonHeight);
 
         int barX = buttonX + 1;
         int barY = buttonY + 1;
@@ -96,14 +98,7 @@ public class MacroPlayHud {
             graphics.setColor(1.0f, 1.0f, 1.0f, 1.0f);
             RenderSystem.enableBlend();
             RenderSystem.enableDepthTest();
-            graphics.blitNineSliced(
-                    PROGRESS_BAR,
-                    barX, barY,
-                    barWidth, barHeight,
-                    20, 4,
-                    198, 18,
-                    1, textureY + 21
-            );
+            graphics.blitSprite(PROGRESS_BAR, barX, barY, barWidth, barHeight);
         } catch (ArithmeticException ignored) {
             // ignore divide by zero
         }

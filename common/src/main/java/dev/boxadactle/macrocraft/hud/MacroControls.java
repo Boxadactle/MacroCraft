@@ -25,15 +25,15 @@ public class MacroControls {
 
     static int padding = 5;
 
-    public static RenderingLayout render(boolean disablePlayButton, boolean disablePauseButton) {
+    public static RenderingLayout createButtons(GuiGraphics graphics, boolean disablePlayButton, boolean disablePauseButton) {
         RowLayout layout = new RowLayout(0, 0, padding);
 
         layout.addComponent(new LayoutContainerComponent(renderPlayButton(disablePlayButton)));
         layout.addComponent(new LayoutContainerComponent(renderPauseButton(disablePauseButton)));
         layout.addComponent(new LayoutContainerComponent(renderStopButton()));
 
-        int w = ClientUtils.getClient().getWindow().getGuiScaledWidth();
-        int h = ClientUtils.getClient().getWindow().getGuiScaledHeight();
+        int w = graphics.guiWidth();
+        int h = graphics.guiHeight();
 
         return new CenteredLayout(0, h - 100, w, layout.calculateRect().getHeight() + 20, layout);
     }
