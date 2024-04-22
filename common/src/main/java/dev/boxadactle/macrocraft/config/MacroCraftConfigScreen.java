@@ -1,9 +1,9 @@
 package dev.boxadactle.macrocraft.config;
 
-import dev.boxadactle.boxlib.gui.BOptionScreen;
-import dev.boxadactle.boxlib.gui.widget.BSpacingEntry;
-import dev.boxadactle.boxlib.gui.widget.button.BBooleanButton;
-import dev.boxadactle.boxlib.gui.widget.button.BConfigScreenButton;
+import dev.boxadactle.boxlib.gui.config.BOptionScreen;
+import dev.boxadactle.boxlib.gui.config.widget.BSpacingEntry;
+import dev.boxadactle.boxlib.gui.config.widget.button.BBooleanButton;
+import dev.boxadactle.boxlib.gui.config.widget.button.BConfigScreenButton;
 import dev.boxadactle.boxlib.util.ClientUtils;
 import dev.boxadactle.macrocraft.MacroCraft;
 import dev.boxadactle.macrocraft.gui.MacroListScreen;
