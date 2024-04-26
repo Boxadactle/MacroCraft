@@ -17,7 +17,7 @@ import java.util.Date;
 public class MacroCraft {
 	public static final String MOD_NAME = "MacroCraft";
 	public static final String MOD_ID = "macrocraft";
-	public static final String VERSION = "1.0.0";
+	public static final String VERSION = "3.0.0";
 	public static final String VERSION_STRING = MOD_NAME + " v" + VERSION;
 
 	public static final ModLogger LOGGER = new ModLogger(MOD_NAME);
