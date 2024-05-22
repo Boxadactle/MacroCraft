@@ -8,8 +8,8 @@ import net.fabricmc.fabric.api.client.command.v2.FabricClientCommandSource;
 
 public abstract class MacrocraftCommand extends BClientCommand {
     @Override
-    public String getName() {
-        return "macrocraft";
+    public String getCommandName() {
+        return "macro";
     }
 
     @Override

@@ -1,0 +1,38 @@
+modLoader = "javafml"
+loaderVersion = "[2,)"
+#issueTrackerURL = ""
+license = "MIT"
+
+[[mods]]
+modId = "macrocraft"
+version = "${version}"
+displayName = "MacroCraft"
+authors = "Boxadactle"
+description = '''
+MacroCraft is a revolutionary mod that empowers players to record, save, and execute complex sequences of actions with unparalleled ease.
+'''
+logoFile = "icon.png"
+
+[[dependencies.macrocraft]]
+modId = "neoforge"
+type = "required"
+versionRange = "[20.5,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.macrocraft]]
+modId = "minecraft"
+type = "required"
+versionRange = "[1.20.5,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.macrocraft]]
+modId = "boxlib"
+type = "required"
+versionRange = "[13.0.0, 14.0.0)"
+ordering = "NONE"
+side = "BOTH"
+
+[[mixins]]
+config = "macrocraft.mixins.json"
