@@ -38,7 +38,7 @@ public abstract class KeyboardListener {
                 return;
             }
 
-            if (i == 256) {
+            if (i == 256 && ClientUtils.getClient().isPaused()) {
                 MacroCraft.LOGGER.info("Ignoring KeyboardAction due to escape key.");
                 return;
             }

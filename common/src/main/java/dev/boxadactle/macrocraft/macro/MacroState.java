@@ -126,23 +126,23 @@ public class MacroState {
         }
 
         if (IS_PAUSED) {
-            MacroCraft.LOGGER.info("Ignoring " + action.getClass().getSimpleName() + " due to macro recording being paused.");
+            MacroCraft.LOGGER.debug("Ignoring " + action.getClass().getSimpleName() + " due to macro recording being paused.");
             return;
         }
 
         if (ClientUtils.getCurrentScreen() != null) {
             if (ClientUtils.getCurrentScreen().isPauseScreen() && MacroCraft.CONFIG.get().ignoreMenuNavigation) {
-                MacroCraft.LOGGER.info("Ignoring " + action.getClass().getSimpleName() + " due to menu navigation.");
+                MacroCraft.LOGGER.debug("Ignoring " + action.getClass().getSimpleName() + " due to menu navigation.");
                 return;
             }
 
             if (ClientUtils.getCurrentScreen() instanceof ChatScreen && MacroCraft.CONFIG.get().ignoreChatTyping) {
-                MacroCraft.LOGGER.info("Ignoring " + action.getClass().getSimpleName() + " due to chat typing.");
+                MacroCraft.LOGGER.debug("Ignoring " + action.getClass().getSimpleName() + " due to chat typing.");
                 return;
             }
         }
 
-        MacroCraft.LOGGER.info("Captured " + action.getClass().getSimpleName() + " and added to macro.");
+        MacroCraft.LOGGER.debug("Captured " + action.getClass().getSimpleName() + " and added to macro.");
 
         LOADED_MACRO.actions.add(action);
     }
