@@ -1,6 +1,5 @@
 package dev.boxadactle.macrocraft.listeners;
 
-import dev.boxadactle.boxlib.util.ClientUtils;
 import dev.boxadactle.macrocraft.gui.MacroListScreen;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.layouts.LayoutElement;

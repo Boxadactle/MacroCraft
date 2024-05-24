@@ -1,4 +1,4 @@
-package dev.boxadactle.macrocraft.forge;
+package dev.boxadactle.macrocraft.neoforge;
 
 import dev.boxadactle.boxlib.util.ClientUtils;
 import dev.boxadactle.macrocraft.MacroCraft;
@@ -7,20 +7,20 @@ import dev.boxadactle.macrocraft.gui.MacroListScreen;
 import dev.boxadactle.macrocraft.hud.MacroPlayHud;
 import dev.boxadactle.macrocraft.hud.MacroRecordHud;
 import dev.boxadactle.macrocraft.macro.MacroState;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.client.event.InputEvent;
-import net.minecraftforge.client.event.RegisterKeyMappingsEvent;
-import net.minecraftforge.client.event.RenderGuiEvent;
-import net.minecraftforge.event.TickEvent;
-import net.minecraftforge.eventbus.api.EventPriority;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.bus.api.EventPriority;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.client.event.ClientTickEvent;
+import net.neoforged.neoforge.client.event.InputEvent;
+import net.neoforged.neoforge.client.event.RegisterKeyMappingsEvent;
+import net.neoforged.neoforge.client.event.RenderGuiEvent;
 
-@Mod.EventBusSubscriber(modid = MacroCraft.MOD_ID, value = Dist.CLIENT)
+@EventBusSubscriber(modid = MacroCraft.MOD_ID, value = Dist.CLIENT)
 public class MacroCraftEvents {
 
     @SubscribeEvent
-    public static void onClientTick(TickEvent.ClientTickEvent ignored) {
+    public static void onClientTick(ClientTickEvent ignored) {
         MacroState.tick();
     }
 
@@ -42,7 +42,7 @@ public class MacroCraftEvents {
         }
     }
 
-    @Mod.EventBusSubscriber(modid = MacroCraft.MOD_ID, value = Dist.CLIENT, bus = Mod.EventBusSubscriber.Bus.MOD)
+    @EventBusSubscriber(modid = MacroCraft.MOD_ID, value = Dist.CLIENT, bus = EventBusSubscriber.Bus.MOD)
     public static class ClientModEvents {
 
         @SubscribeEvent

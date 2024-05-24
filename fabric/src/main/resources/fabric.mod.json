@@ -5,7 +5,7 @@
 
   "name": "MacroCraft",
   "description": "MacroCraft is a revolutionary mod that empowers players to record, save, and execute complex sequences of actions with unparalleled ease.",
-  "authors": [],
+  "authors": ["Boxadactle"],
   "contact": {},
 
   "license": "MIT",
@@ -25,6 +25,7 @@
   ],
   "depends": {
     "fabricloader": ">=0.14",
-    "minecraft": ">=1.20"
+    "minecraft": ">=1.20.5",
+    "boxlib": ">=13.0.0"
   }
 }

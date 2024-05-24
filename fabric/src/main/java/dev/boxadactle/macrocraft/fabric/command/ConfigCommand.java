@@ -9,7 +9,7 @@ import net.fabricmc.fabric.api.client.command.v2.FabricClientCommandSource;
 
 public class ConfigCommand extends MacrocraftCommand {
     @Override
-    public String getCommandName() {
+    public String getName() {
         return "config";
     }
 

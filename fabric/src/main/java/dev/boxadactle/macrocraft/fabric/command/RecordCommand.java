@@ -12,7 +12,7 @@ import net.minecraft.network.chat.Component;
 
 public class RecordCommand extends MacrocraftCommand {
     @Override
-    public String getCommandName() {
+    public String getName() {
         return "record";
     }
 
