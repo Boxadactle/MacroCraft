@@ -1,12 +1,7 @@
 package dev.boxadactle.macrocraft.fabric;
 
-import dev.boxadactle.boxlib.fabric.command.BCommandManager;
 import dev.boxadactle.macrocraft.MacroCraft;
 import dev.boxadactle.macrocraft.MacroCraftKeybinds;
-import dev.boxadactle.macrocraft.fabric.command.ConfigCommand;
-import dev.boxadactle.macrocraft.fabric.command.PlayCommand;
-import dev.boxadactle.macrocraft.fabric.command.RecordCommand;
-import dev.boxadactle.macrocraft.fabric.command.SaveCommand;
 import dev.boxadactle.macrocraft.gui.MacroListScreen;
 import dev.boxadactle.macrocraft.hud.MacroPlayHud;
 import dev.boxadactle.macrocraft.hud.MacroRecordHud;
@@ -28,7 +23,6 @@ public class MacroCraftFabric implements ModInitializer {
         HudRenderCallback.EVENT.register(this::renderMacroHud);
 
         initKeybinds();
-        initCommands();
     }
 
     private void initKeybinds() {
@@ -37,15 +31,6 @@ public class MacroCraftFabric implements ModInitializer {
         KeyBindingHelper.registerKeyBinding(MacroCraftKeybinds.playMacro);
         KeyBindingHelper.registerKeyBinding(MacroCraftKeybinds.stopMacro);
         KeyBindingHelper.registerKeyBinding(MacroCraftKeybinds.openMacroList);
-    }
-
-    private void initCommands() {
-        BCommandManager.registerCommand("macro", (list) -> {
-            list.add(ConfigCommand::new);
-            list.add(PlayCommand::new);
-            list.add(RecordCommand::new);
-            list.add(SaveCommand::new);
-        });
     }
 
     private void tick(Minecraft client) {

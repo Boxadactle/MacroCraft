@@ -104,5 +104,7 @@
   "command.macrocraft.recording.already": "You are already recording a macro",
   "command.macrocraft.recording.not": "You are not recording a macro",
   "command.macrocraft.recording.started": "Recording macro...",
-  "command.macrocraft.notLoaded": "No macro is loaded!"
+  "command.macrocraft.notLoaded": "No macro is loaded!",
+  "command.macrocraft.saving": "Saving macro...",
+  "command.macrocraft.saved": "Macro saved as \"%s\""
 }

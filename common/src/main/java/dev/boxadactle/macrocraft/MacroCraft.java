@@ -1,8 +1,10 @@
 package dev.boxadactle.macrocraft;
 
+import dev.boxadactle.boxlib.command.BCommandManager;
 import dev.boxadactle.boxlib.config.BConfigClass;
 import dev.boxadactle.boxlib.config.BConfigHandler;
 import dev.boxadactle.boxlib.util.ModLogger;
+import dev.boxadactle.macrocraft.command.MacroCommand;
 import dev.boxadactle.macrocraft.config.MacroCraftConfig;
 import dev.boxadactle.macrocraft.fs.MacroFile;
 import dev.boxadactle.macrocraft.macro.MacroState;
@@ -17,7 +19,7 @@ import java.util.Date;
 public class MacroCraft {
 	public static final String MOD_NAME = "MacroCraft";
 	public static final String MOD_ID = "macrocraft";
-	public static final String VERSION = "3.0.0";
+	public static final String VERSION = "4.1.0";
 	public static final String VERSION_STRING = MOD_NAME + " v" + VERSION;
 
 	public static final ModLogger LOGGER = new ModLogger(MOD_NAME);
@@ -32,6 +34,9 @@ public class MacroCraft {
 
 		LOGGER.info("Loading configuration...");
 		CONFIG = BConfigHandler.registerConfig(MacroCraftConfig.class);
+
+		LOGGER.info("Registering client commands...");
+		BCommandManager.register(MacroCommand.create());
 	}
 
 	public static String formatDate(long timestamp) {

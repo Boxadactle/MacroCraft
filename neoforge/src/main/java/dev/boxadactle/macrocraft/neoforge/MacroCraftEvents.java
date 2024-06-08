@@ -20,7 +20,7 @@ import net.neoforged.neoforge.client.event.RenderGuiEvent;
 public class MacroCraftEvents {
 
     @SubscribeEvent
-    public static void onClientTick(ClientTickEvent ignored) {
+    public static void onClientTick(ClientTickEvent.Pre ignored) {
         MacroState.tick();
     }
 
